@@ -1,0 +1,21 @@
+<div class="w-full py-6 px-3">
+    <div class="border border-gray-400 bg-white shadow-lg rounded-lg overflow-hidden">
+        <a href="{{ product_param.url }}">                                
+            {% if product_param.featured_image %}
+                <div class="h-80 overflow-hidden">
+                    <img class="w-full h-full object-cover" src="{{ product_param.featured_image | image_url: width: 450 }}" alt="{{ product_param.title | escape }}" width="400" height="auto" loading="lazy"/>
+                </div>
+            {% else %}
+                <div class="h-80 overflow-hidden">
+                    {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover bg-gray-100' }}
+                </div>
+            {% endif %}
+        </a>
+        
+        <div class="p-4 flex flex-col">
+            <span class="text-gray-400 text-sm">{{ product_param.vendor }}</span>
+            <a href="{{ product_param.url }}" class="block font-bold my-1 text-gray-700 uppercase font-medium">{{ product_param.title }}</a>
+            <p class="text-gray-500">{{ product_param.price | money }}</p>
+        </div>
+    </div>
+</div>
