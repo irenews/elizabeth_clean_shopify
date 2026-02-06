@@ -3,7 +3,7 @@
         <a href="{{ product_param.url }}">                                
             {% if product_param.featured_image %}
                 <div class="h-80 overflow-hidden">
-                    <img class="w-full h-full object-cover" src="{{ product_param.featured_image | image_url: width: 450 }}" alt="{{ product_param.title | escape }}" width="400" height="auto" loading="lazy"/>
+                    <img class="w-full h-full object-cover transition duration-500 ease-in-out hover:scale-105 transform" src="{{ product_param.featured_image | image_url: width: 450 }}" alt="{{ product_param.title | escape }}" width="400" height="auto" loading="lazy"/>
                 </div>
             {% else %}
                 <div class="h-80 overflow-hidden">
